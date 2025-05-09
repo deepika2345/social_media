@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../static/css/home.css">
+</head>
+
+<body>
+    <div class="container">
+       <div id="currentUser">
+        {{name}}
+       </div> 
+        <nav>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">contact</a></li>
+            <li><a href="">Profile</a></li>
+        </nav>
+        <div id="followButtons">
+            <button type="button" id="getFollowers">Followers</button>
+            <h1 id="hfollower" style="display: none;">Followers</h1>
+            <div id="followers" style="display: none;"></div>
+            <button type="button" style="display: none;" id="followersCloseButton">Close</button>
+            <button type="button" id="getFollowing">Following</button>
+            <h1 id="hfollowing" style="display: none;">Following</h1>
+            <div id="following" style="display: none;"></div>
+            <button type="button" style="display: none;" id="followingCloseButton">Close</button>
+        </div>
+        <div>
+            <div id="users">
+                <button type="button" id="userButton">Users</button>
+                <div id="userDisplay" style="display: none;"></div>
+                <button type="button" id="closeUsers" style="display: none;">Close</button>
+            </div>
+            <button onclick="displayPost()">+</button>
+            <div id="upLoadPost" style="display: none;">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="postimage" id="postimage" accept="image/*" onchange="previewImage(event)">
+                    <input type="text" placeholder="caption" id="caption" name="caption">
+                    <input type="submit" value="Post">
+                </form>
+                <button type="button" id="closePost">Close</button>
+            </div>
+            <div id="posts"></div>
+            <div class="viewPosts" style="display: none;">
+                <img src="" alt="" id="imgPreview">
+                <div id="likes">
+                    <button id="likeButton" type="button">like</button>
+                    <p id="like" name="like">0</p>
+                    <input type="hidden" name="like" value="0" id="hlike">
+                </div>
+                <div id="wholeComments">
+                    <h3>Comments</h3>
+
+                    <div id="commentForm">
+                        <textarea name="comment" id="comment" placeholder="comment"></textarea>
+                        <button type="button" id="commentButton">Send</button>
+                    </div>
+                    <div id="commentsList">
+                        <p id="fcomment">no comments yet</p>
+                    </div>
+                </div>
+                <div id="share">
+                    <button type="button" id="shareButton">Share</button>
+                    <div id="shareurl" style="display: none;">
+                        <p>
+                            https://url/for/post
+
+                        </p>
+                        <button type="button" id="crossShare">X</button>
+                    </div>
+                    <input type="hidden" name="sharecount" id="sharecount" value="0">
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <script src="../static/js/home.js"></script>
+</body>
+
+</html>
